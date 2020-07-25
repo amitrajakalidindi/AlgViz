@@ -2,20 +2,9 @@
 <html>
     <head>
         <title>Algo Visualizer</title>
-        <link rel="stylesheet" href="index.css">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="index.js"></script>
-        <style>
-            table,td {
-                border-collapse: collapse;
-                border: 1px solid steelblue;
-            }
-            td{
-                width:20px;
-                height:20px;    
-            }
-        </style>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div id="box1">
@@ -27,8 +16,8 @@
         <br>
         <div id="box2">
             <ul>
-                <li style="color:#34495e;"><i class="material-icons" style="color:black;font-size:24px">my_location</i> Source Node</li>
-                <li style="color:#34495e;"><i class="material-icons" style="color: black;font-size:24px">place</i> Destination</li>
+                <li id="source" class="select" onclick="setOperation(this.id)" style="color:black;"><i class="material-icons" style="color:red;font-size:24px">my_location</i> Source</li>
+                <li id="destination" class="select" onclick="setOperation(this.id)" style="color:black;"><i class="material-icons" style="color: green;font-size:24px">place</i> Destination</li>
             </ul>
         </div>
         <br>
@@ -36,5 +25,6 @@
             <table id="grid"></table>
         </div> 
         <script src="grid.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>

@@ -14,9 +14,13 @@ table,td {
     border-collapse: collapse;
     border: 1px solid steelblue;
 }
+td:hover , table:hover {
+    cursor: pointer;
+}
 td{
-    width:20px;
-    height:20px;    
+    width:30px;
+    height:30px;    
+    text-align: center;
 }
 ul{
     list-style-type: none;
@@ -28,8 +32,11 @@ li{
     font-size :22px;
     width: 200px;
     float: left;
-    color: whitesmoke;
+    color: white;
     padding:5px;
+}
+li.select{
+    cursor: pointer;
 }
 #box2 {
     clear: left;
