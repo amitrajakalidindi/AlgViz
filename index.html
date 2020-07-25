@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Algo Visualizer</title>
+        <link rel="stylesheet" href="index.css">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="index.js"></script>
+        <style>
+            table,td {
+                border-collapse: collapse;
+                border: 1px solid steelblue;
+            }
+            td{
+                width:20px;
+                height:20px;    
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            <h1 id="heading" >AlgViz</h1>
+            <ul>
+                <li class="algo">Shortest Path</li>
+            </ul>
+        </div>
+        <br>
+        <div id="box2">
+            <ul>
+                <li style="color:#34495e;"><i class="material-icons" style="color:black;font-size:24px">my_location</i> Source Node</li>
+                <li style="color:#34495e;"><i class="material-icons" style="color: black;font-size:24px">place</i> Destination</li>
+            </ul>
+        </div>
+        <br>
+        <div id="box3">
+            <table id="grid"></table>
+        </div> 
+        <script src="grid.js"></script>
+    </body>
+</html>
