@@ -10,6 +10,10 @@ h1 {
     margin: 0px;
     border: 1px solid black;
 }
+::selection {
+    color: none;
+    background: none;
+}
 table,td {
     border-collapse: collapse;
     border: 1px solid steelblue;
