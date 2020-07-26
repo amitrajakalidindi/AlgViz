@@ -1,4 +1,5 @@
 function shortestPath(){
+    clearPath();
     var visit=[];
     var parent=[];
     var queue=[];
