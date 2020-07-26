@@ -13,7 +13,8 @@ function shortestPath(){
             c++;
         }
     }
-    x= (source_x)*44 + source_y;
+    x= parseInt((source_x)*44) + parseInt(source_y);
+    console.log(x);
     queue.push(x);
     visit[x]=1;
     console.log("started");
