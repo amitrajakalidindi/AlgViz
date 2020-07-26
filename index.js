@@ -110,3 +110,34 @@ function wall1(s){
     }
     mouseDown=0;
 }
+
+function clearE(){
+    for(i=0;i<21;i++){
+        for(j=0;j<44;j++){
+            x=i+"_"+j;
+            y=document.getElementById(x);
+            if(y.class=="unvisited" || y.class=="wall"){
+                y.class = "unvisited";
+                y.style.backgroundColor = "white";
+            }
+            else if(y.class=="source" || y.class=="destination"){
+                y.style.backgroundColor = "white";
+            }
+        }
+    }
+}
+
+function clearPath(){
+    for(i=0;i<21;i++){
+        for(j=0;j<44;j++){
+            x=i+"_"+j;
+            y=document.getElementById(x);
+            if(y.class=="unvisited"){
+                y.style.backgroundColor = "white";
+            }
+            else if(y.class=="source" || y.class=="destination"){
+                y.style.backgroundColor = "white";
+            }
+        }
+    }
+}

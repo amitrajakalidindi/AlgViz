@@ -17,11 +17,7 @@ function shortestPath(){
     queue.push(x);
     visit[x]=1;
     console.log("started");
-    var timer = setInterval(function(){
-        if(queue.length==0){
-            findPath();
-            clearInterval(timer);
-        }
+    while(queue.length!=0){
         z=queue.shift();
         y=z%44;
         x=Math.trunc(z/44);
@@ -89,28 +85,30 @@ function shortestPath(){
         if(document.getElementById(z).class=="destination"){
             document.getElementById(z).style.backgroundColor="rgb(43, 187, 180)";
             flag=1;
-            findPath();
-            clearInterval(timer);
+            break;
         }
         else{
             document.getElementById(z).style.backgroundColor="rgb(43, 187, 180)";
         }
-    },20);
-    function findPath(){
-        if(flag==1){
-            console.log("inparent");
-            p = parseInt((destination_x)*44) + parseInt(destination_y);
-            while(parent[p]!=p){
-                path.push(p);
-                p=parent[p];
-            }
+    }
+    if(flag==1){
+        p = parseInt((destination_x)*44) + parseInt(destination_y);
+        console.log("inparent");
+        console.log(parent.length);
+        console.log(p);
+        console.log(destination_x);
+        console.log(destination_y);
+        while(parent[p]!=p){
             path.push(p);
-            for(i=0;i<path.length;i++){
-                y=path[i]%44;
-                x=Math.trunc(path[i]/44);
-                p=x+"_"+y;
-                document.getElementById(p).style.backgroundColor="orange";
-            }
+            console.log(p);
+            p=parent[p];
+        }
+        path.push(p);
+        for(i=0;i<path.length;i++){
+            y=path[i]%44;
+            x=Math.trunc(path[i]/44);
+            p=x+"_"+y;
+            document.getElementById(p).style.backgroundColor="orange";
         }
     }
     console.log("ended");
