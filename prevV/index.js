@@ -1,6 +1,5 @@
 var source_x,source_y,destination_x,destination_y;
-var s,x,y,z;
-
+var s,x,y;
 var operation="wall";
 source_x = 10;
 source_y = 7;
@@ -18,8 +17,8 @@ document.getElementById(s).class="destination";
 
 function setOperation(s){
     if(s=="source"){
-        if(operation=="destination" || operation=="weight"){
-            document.getElementById(operation).style.color = "black";
+        if(operation=="destination"){
+            document.getElementById("destination").style.color = "black";
         }
         if(operation!="source"){
             operation="source";
@@ -31,24 +30,11 @@ function setOperation(s){
         }
     }
     else if(s=="destination"){
-        if(operation=="source" || operation=="weight"){
-            document.getElementById(operation).style.color = "black";
+        if(operation=="source"){
+            document.getElementById("source").style.color = "black";
         }
         if(operation!="destination"){
             operation="destination";
-            document.getElementById(s).style.color = "rgb(43, 187, 180)";
-        }
-        else{
-            operation="wall";
-            document.getElementById(s).style.color = "black";
-        }
-    }
-    else if(s=="weight"){
-        if(operation=="source" || operation=="destination"){
-            document.getElementById(operation).style.color = "black";
-        }
-        if(operation!="weight"){
-            operation="weight";
             document.getElementById(s).style.color = "rgb(43, 187, 180)";
         }
         else{
@@ -67,9 +53,6 @@ function change(s){
     else if(operation=="destination"){
         destination(s);
     }
-    else if(operation=="weight"){
-        weight(s);
-    }
 }
 
 function source(s){
@@ -79,13 +62,10 @@ function source(s){
         y.innerHTML="";
         y.class = "unvisited";
         y=s.split("_");
-        source_x = parseInt(y[0]);
-        source_y = parseInt(y[1]);
+        source_x = y[0];
+        source_y = y[1];
         document.getElementById(s).class = "source";
         document.getElementById(s).innerHTML = '<i class="material-icons" style="color:red;font-size:22px">my_location</i>';
-        x = parseInt(y[0]);
-        z = parseInt(y[1]);
-        weights[x][z] = 1;
     }
 }
 
@@ -96,23 +76,10 @@ function destination(s){
         y.innerHTML="";
         y.class = "unvisited";
         y=s.split("_");
-        destination_x = parseInt(y[0]);
-        destination_y = parseInt(y[1]);
+        destination_x = y[0];
+        destination_y = y[1];
         document.getElementById(s).class = "destination";
         document.getElementById(s).innerHTML = '<i class="material-icons" style="color:green;font-size:22px">place</i>';
-        x = parseInt(y[0]);
-        z = parseInt(y[1]);
-        weights[x][z] = 1;
-    }
-}
-
-function weight(s){
-    if(document.getElementById(s).class == "unvisited"){
-        y = s.split("_");
-        x = parseInt(y[0]);
-        z = parseInt(y[1]);
-        weights[x][z] = parseInt(document.getElementById("quantity").value);
-        document.getElementById(s).innerHTML = weights[x][z].toString();
     }
 }
 
@@ -120,11 +87,6 @@ function weight(s){
 
 function wall(s){
     if(document.getElementById(s).class == "unvisited"){
-        y = s.split("_");
-        x = parseInt(y[0]);
-        z = parseInt(y[1]);
-        weights[x][z] = 1;
-        document.getElementById(s).innerHTML = "";
         document.getElementById(s).class = "wall";
         document.getElementById(s).style.backgroundColor = "black";
     }
@@ -139,11 +101,6 @@ function wall1(s){
         flag=1;
     }
     if(document.getElementById(s).class == "unvisited" && flag){
-        y = s.split("_");
-        x = parseInt(y[0]);
-        z = parseInt(y[1]);
-        weights[x][z] = 1;
-        document.getElementById(s).innerHTML = "";
         document.getElementById(s).class = "wall";
         document.getElementById(s).style.backgroundColor = "black";
     }
@@ -161,8 +118,6 @@ function clearE(){
             y=document.getElementById(x);
             if(y.class=="unvisited" || y.class=="wall"){
                 y.class = "unvisited";
-                weights[i][j] = 1;
-                y.innerHTML="";
                 y.style.backgroundColor = "white";
             }
             else if(y.class=="source" || y.class=="destination"){

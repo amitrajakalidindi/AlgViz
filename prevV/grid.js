@@ -24,14 +24,7 @@ for(i=0;i<21;i++){
         x=i+"_"+j;
         y=document.getElementById(x);
         y.class = "unvisited";
-        y.setAttribute("onmouseover","wall1(this.id)");
+        y.setAttribute("onmouseover","wall1(this.id)")
         y.setAttribute("onclick","change(this.id)");
-    }
-}
-var weights=[];
-for(i=0;i<21;i++){
-    weights[i]=new Array(44);
-    for(j=0;j<44;j++){
-        weights[i][j]=1;
     }
 }
