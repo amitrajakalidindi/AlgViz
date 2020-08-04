@@ -17,17 +17,19 @@
         <br>
         <div id="box2">
             <ul>
-                <li id="source" class="select" onclick="setOperation(this.id)" style="color:black;"><i class="material-icons" style="color:red;font-size:24px">my_location</i>Change Source</li>
-                <li id="destination" class="select" onclick="setOperation(this.id)" style="color:black;"><i class="material-icons" style="color: green;font-size:24px">place</i>Change Destination</li>
-                <li id="weight" class="select" onclick="setOperation(this.id)" style="color:black;"><i class="material-icons" style="color:black;font-size:24px">fitness_center</i>Add weight
+                <li id="source" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color:red">my_location</i><p>Change Source</p></li>
+                <li id="destination" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color: green">place</i><p>Change Destination</p></li>
+                <li id="weight" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color:black">fitness_center</i><p>Add weight</p>
                     <form>
                         <input type="number" id="quantity" min="1">
                     </form>
                 </li>
+                <li id="speed" class="select" onclick="setSpeed(this.id)" ><i class="material-icons" style="font-size:24px">fast_forward</i><p>Set Speed</p>
+                </li>
             </ul>
             <ul>
-                <li id="clear" class="select" onclick="clearE()" style="color:black;">Clear</li>
-                <li id="clearpath" class="select" onclick="clearPath()" style="color:black;">Clear Path</li>
+                <li id="clear" class="select" onclick="clearE()" ><p>Clear</p></li>
+                <li id="clearpath" class="select" onclick="clearPath()" ><p>Clear Path</p></li>
             </ul>
         </div>
         <br>
