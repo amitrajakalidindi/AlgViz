@@ -1,5 +1,6 @@
 function shortestPath(){
     clearPath();
+    console.log(speed);
     var visit=[];
     var parent=[];
     var arr=[];

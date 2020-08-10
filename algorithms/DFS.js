@@ -1,5 +1,6 @@
 function DFS(){
     clearPath();
+    console.log(speed);
     var stack=[];
     var parent=[];
     var visit=[];
