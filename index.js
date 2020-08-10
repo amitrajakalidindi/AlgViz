@@ -2,6 +2,7 @@ var source_x,source_y,destination_x,destination_y;
 var s,x,y,z;
 
 var operation="wall";
+var speed=50;
 source_x = 10;
 source_y = 7;
 destination_x=10;
@@ -56,6 +57,10 @@ function setOperation(s){
             document.getElementById(s).style.color = "black";
         }
     }
+}
+function setSpeed(s){
+    speed=110-10*parseInt(document.getElementById("time").value);
+    console.log(speed);
 }
 function change(s){
     if(operation=="wall"){

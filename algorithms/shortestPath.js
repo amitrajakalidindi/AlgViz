@@ -40,18 +40,12 @@ function shortestPath(){
             z1=x1+"_"+y1;
             if(document.getElementById(z1).class=="unvisited" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
             }
             else if(document.getElementById(z1).class=="destination" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);   
-                    console.log(weights[x1][y1]+arr[x*44 + y]); 
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
@@ -63,18 +57,12 @@ function shortestPath(){
             z1=x1+"_"+y1;
             if(document.getElementById(z1).class=="unvisited" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
             }
             else if(document.getElementById(z1).class=="destination" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
@@ -86,18 +74,12 @@ function shortestPath(){
             z1=x1+"_"+y1;
             if(document.getElementById(z1).class=="unvisited" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
             }
             else if(document.getElementById(z1).class=="destination" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
@@ -109,18 +91,12 @@ function shortestPath(){
             z1=x1+"_"+y1;
             if(document.getElementById(z1).class=="unvisited" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
             }
             else if(document.getElementById(z1).class=="destination" && visit[x1*44 + y1]==0){
                 if(arr[x1*44 + y1]>weights[x1][y1]+arr[x*44 + y]){
-                    console.log(x1);
-                    console.log(y1);
-                    console.log(weights[x1][y1]+arr[x*44 + y]);
                     arr[x1*44 + y1]=weights[x1][y1]+arr[x*44 + y];
                     parent[x1*44 + y1]=z;
                 }
@@ -136,10 +112,9 @@ function shortestPath(){
         else{
             document.getElementById(z).style.backgroundColor="rgb(43, 187, 180)";
         }
-    },20);
+    },speed);
     function findPath(){
         if(flag==1){
-            console.log("inparent");
             p = parseInt((destination_x)*44) + parseInt(destination_y);
             while(parent[p]!=p){
                 path.push(p);

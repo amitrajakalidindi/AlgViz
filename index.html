@@ -19,12 +19,15 @@
             <ul>
                 <li id="source" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color:red">my_location</i><p>Change Source</p></li>
                 <li id="destination" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color: green">place</i><p>Change Destination</p></li>
-                <li id="weight" class="select" onclick="setOperation(this.id)" ><i class="material-icons" style="color:black">fitness_center</i><p>Add weight</p>
+                <li id="weight" class="select" ><i class="material-icons" style="color:black">fitness_center</i><p onclick="setOperation('weight')">Add weight</p>
                     <form>
                         <input type="number" id="quantity" min="1">
                     </form>
                 </li>
-                <li id="speed" class="select" onclick="setSpeed(this.id)" ><i class="material-icons" style="font-size:24px">fast_forward</i><p>Set Speed</p>
+                <li id="speed" class="select" ><i class="material-icons" style="font-size:24px">fast_forward</i><p onclick="setSpeed('speed')">Set Speed</p>
+                    <form>
+                        <input type="number" id="time" min="1">
+                    </form>
                 </li>
             </ul>
             <ul>

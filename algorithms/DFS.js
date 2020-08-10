@@ -155,7 +155,7 @@ function DFS(){
                 } 
             }
         }
-    },30);
+    },speed);
     function findPath(){
         if(flag==1){
             p = parseInt((destination_x)*44) + parseInt(destination_y);
